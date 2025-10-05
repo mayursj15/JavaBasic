@@ -1,0 +1,175 @@
+// stream/src/main/java/org/mayur/data/MockEmployee.java
+package org.mayur.data;
+
+import java.time.LocalDate;
+import java.util.List;
+
+public class MockEmployee {
+
+    public static List<Employee> getAllEmployees() {
+        Department dev = Department.builder().name("Development").code("DEV").build();
+        Department hr = Department.builder().name("Human Resources").code("HR").build();
+        Department sales = Department.builder().name("Sales").code("SAL").build();
+
+        Address addr1 = Address.builder().street("12 MG Road").city("Pune").state("Maharashtra").zipCode("411001").build();
+        Address addr2 = Address.builder().street("45 Brigade Road").city("Bengaluru").state("Karnataka").zipCode("560001").build();
+        Address addr3 = Address.builder().street("78 Park Street").city("Kolkata").state("West Bengal").zipCode("700016").build();
+        Address addr4 = Address.builder().street("23 Nehru Place").city("Delhi").state("Delhi").zipCode("110019").build();
+        Address addr5 = Address.builder().street("56 Anna Salai").city("Chennai").state("Tamil Nadu").zipCode("600002").build();
+
+        Employee manager = Employee.builder()
+                .name("Amit Sharma")
+                .age(42)
+                .salary(210000)
+                .email("amit.sharma@company.in")
+                .phoneNumber("9876543210")
+                .joiningDate(LocalDate.of(2009, 2, 15))
+                .addresses(List.of(addr1))
+                .department(dev)
+                .position("Engineering Manager")
+                .manager(null)
+                .isActive(true)
+                .skills(List.of("Leadership", "Java", "Spring"))
+                .employeeId("EMP001")
+                .build();
+
+        return List.of(
+                manager,
+                Employee.builder()
+                        .name("Priya Singh")
+                        .age(29)
+                        .salary(95000)
+                        .email("priya.singh@company.in")
+                        .phoneNumber("9123456789")
+                        .joiningDate(LocalDate.of(2017, 6, 10))
+                        .addresses(List.of(addr2))
+                        .department(dev)
+                        .position("Software Engineer")
+                        .manager(manager)
+                        .isActive(true)
+                        .skills(List.of("Java", "Spring Boot", "Docker"))
+                        .employeeId("EMP002")
+                        .build(),
+                Employee.builder()
+                        .name("Rahul Verma")
+                        .age(34)
+                        .salary(87000)
+                        .email("rahul.verma@company.in")
+                        .phoneNumber("9988776655")
+                        .joiningDate(LocalDate.of(2015, 4, 18))
+                        .addresses(List.of(addr3))
+                        .department(hr)
+                        .position("HR Specialist")
+                        .manager(null)
+                        .isActive(true)
+                        .skills(List.of("Recruitment", "Communication"))
+                        .employeeId("EMP003")
+                        .build(),
+                Employee.builder()
+                        .name("Sneha Patil")
+                        .age(31)
+                        .salary(90000)
+                        .email("sneha.patil@company.in")
+                        .phoneNumber("9876501234")
+                        .joiningDate(LocalDate.of(2018, 8, 5))
+                        .addresses(List.of(addr4, addr1))
+                        .department(sales)
+                        .position("Sales Executive")
+                        .manager(null)
+                        .isActive(true)
+                        .skills(List.of("Negotiation", "CRM"))
+                        .employeeId("EMP004")
+                        .build(),
+                Employee.builder()
+                        .name("Vikram Rao")
+                        .age(27)
+                        .salary(98000)
+                        .email("vikram.rao@company.in")
+                        .phoneNumber("9001234567")
+                        .joiningDate(LocalDate.of(2020, 1, 12))
+                        .addresses(List.of(addr2))
+                        .department(dev)
+                        .position("Backend Developer")
+                        .manager(manager)
+                        .isActive(true)
+                        .skills(List.of("Java", "SQL", "Microservices"))
+                        .employeeId("EMP005")
+                        .build(),
+                Employee.builder()
+                        .name("Anjali Mehta")
+                        .age(36)
+                        .salary(88000)
+                        .email("anjali.mehta@company.in")
+                        .phoneNumber("9090909090")
+                        .joiningDate(LocalDate.of(2014, 3, 22))
+                        .addresses(List.of(addr5, addr3))
+                        .department(hr)
+                        .position("HR Manager")
+                        .manager(null)
+                        .isActive(false)
+                        .skills(List.of("Leadership", "Recruitment"))
+                        .employeeId("EMP006")
+                        .build(),
+                Employee.builder()
+                        .name("Rohan Gupta")
+                        .age(30)
+                        .salary(92000)
+                        .email("rohan.gupta@company.in")
+                        .phoneNumber("9123123123")
+                        .joiningDate(LocalDate.of(2019, 10, 1))
+                        .addresses(List.of(addr1))
+                        .department(sales)
+                        .position("Account Manager")
+                        .manager(null)
+                        .isActive(true)
+                        .skills(List.of("CRM", "Presentation"))
+                        .employeeId("EMP007")
+                        .build(),
+                Employee.builder()
+                        .name("Meera Nair")
+                        .age(28)
+                        .salary(94000)
+                        .email("meera.nair@company.in")
+                        .phoneNumber("9876123456")
+                        .joiningDate(LocalDate.of(2021, 2, 14))
+                        .addresses(List.of(addr2, addr5))
+                        .department(dev)
+                        .position("Frontend Developer")
+                        .manager(manager)
+                        .isActive(true)
+                        .skills(List.of("JavaScript", "React", "CSS"))
+                        .employeeId("EMP008")
+                        .build(),
+                Employee.builder()
+                        .name("Suresh Kumar")
+                        .age(33)
+                        .salary(86000)
+                        .email("suresh.kumar@company.in")
+                        .phoneNumber("9009876543")
+                        .joiningDate(LocalDate.of(2016, 7, 19))
+                        .addresses(List.of(addr3))
+                        .department(hr)
+                        .position("HR Coordinator")
+                        .manager(null)
+                        .isActive(true)
+                        .skills(List.of("Communication", "Onboarding"))
+                        .employeeId("EMP009")
+                        .build(),
+                Employee.builder()
+                        .name("Pooja Desai")
+                        .age(32)
+                        .salary(93000)
+                        .email("pooja.desai@company.in")
+                        .phoneNumber("9012345678")
+                        .joiningDate(LocalDate.of(2017, 11, 27))
+                        .addresses(List.of(addr4, addr1))
+                        .department(sales)
+                        .position("Sales Lead")
+                        .manager(null)
+                        .isActive(false)
+                        .skills(List.of("Negotiation", "CRM", "Leadership"))
+                        .employeeId("EMP010")
+                        .build()
+        );
+    }
+}
